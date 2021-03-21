@@ -1,0 +1,143 @@
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+
+.newsfeed {
+  position: fixed;
+  bottom: 10%;
+  right: 0;
+  z-index: 200;
+  max-height: 340px;
+}
+.newsfeed--opened {
+  background: #ffffff;
+  border: 2px solid blueviolet;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.newsfeed__icon {
+  width: 50px;
+  height: 50px;
+  background: blueviolet;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(0,0,0,.25);
+  cursor: pointer;
+}
+
+.newsfeed__icon:focus,
+.newsfeed__icon:active {
+  background: rgb(88, 28, 144);
+  outline: none;
+}
+
+.nf--hidden {
+  display: none !important;
+}
+
+.newsfeed__feed-block {
+  background: #ffffff;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.news-block {
+  height: 160px;
+  min-width: 200px;
+  padding: 5px;
+  border-radius: 10px;
+  border-bottom: 1px solid rgb(174, 117, 226);
+  box-sizing: border-box;
+}
+
+.news-block.nf--unread {
+  background:rgb(229, 214, 243);
+}
+
+.news-block:last-child {
+  margin-bottom: 0;
+}
+
+.news-block__title {
+  margin: 5px auto;
+  text-align: center;
+}
+
+.news-block__author {
+  margin: 5px auto;
+}
+
+.news-block__date {
+  font-size: 12px;
+  color: #828282;
+}
+
+.news-block__link {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+.newsfeed__btn {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: blueviolet;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+.newsfeed__btn:active {
+  background: rgb(88, 28, 144);
+  outline: none;
+}
+
+.newsfeed__btn::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #ffffff;
+  border-left: none;
+  border-bottom: none;
+}
+
+.newsfeed__btn--forward {
+  bottom: 5px;
+}
+
+.newsfeed__btn--forward::before {
+  transform: rotate(135deg);
+  top: 4px;
+  left: 6px;
+}
+
+.newsfeed__btn--back {
+  top: 5px;
+}
+
+.newsfeed__btn--back::before {
+  transform: rotate(-45deg);
+  top: 8px;
+  left: 6px;
+}
